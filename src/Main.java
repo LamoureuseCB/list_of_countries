@@ -88,7 +88,7 @@ public class Main {
     static void getPopulation(Connection connection) throws SQLException {
         System.out.println("Введите название стран (через запятую и пробел): ");
         String countryName = scanner.nextLine();
-        String[] countryNames = countryName.split(",");
+        String[] countryNames = countryName.split(", ");
 
         StringBuilder sql = new StringBuilder();
         sql.append("select cities.id, cities.name, cities.population from cities join countries on countries.id = cities.country_id where countries.name in (");
